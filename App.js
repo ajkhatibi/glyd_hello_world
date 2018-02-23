@@ -1,7 +1,7 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Dimensions } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Dimensions, Image } from 'react-native';
 import { Location, Permissions } from 'expo';
-
+import me from './me.png';
 export default class App extends React.Component {
   constructor(props){
     super(props)
@@ -47,6 +47,7 @@ export default class App extends React.Component {
           <Text>{this.state.text}</Text>
           <Text>Longitude: {this.state.longitude}</Text>
           <Text>Latitude: {this.state.latitude}</Text>
+          <Image source={me} style={{ width: 100, height: 100 }} />
         </View>
       )
     }
