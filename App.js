@@ -57,8 +57,7 @@ export default class App extends React.Component {
   shareMethod(){
     Share.share({
       message: 'Glad app is the best!!',
-      title: 'glyd apps the best',
-     
+      title: 'glyd apps the best'
     })
   }
   render() {
