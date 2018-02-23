@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyleSheet, Text, View, TouchableOpacity, TextInput, Dimensions, Image } from 'react-native';
+import { StyleSheet, Text, View, TouchableOpacity, TextInput, Dimensions, Image, Share } from 'react-native';
 import { Location, Permissions } from 'expo';
 import me from './me.png';
 export default class App extends React.Component {
@@ -47,10 +47,19 @@ export default class App extends React.Component {
           <Text>{this.state.text}</Text>
           <Text>Longitude: {this.state.longitude}</Text>
           <Text>Latitude: {this.state.latitude}</Text>
-          <Image source={me} style={{ width: 100, height: 100 }} />
+          <TouchableOpacity onPress={this.shareMethod.bind(this)} >
+            <Image source={me} style={{ width: 100, height: 100 }} />
+          </TouchableOpacity>
         </View>
       )
     }
+  }
+  shareMethod(){
+    Share.share({
+      message: 'Glad app is the best!!',
+      title: 'glyd apps the best',
+     
+    })
   }
   render() {
     return (
